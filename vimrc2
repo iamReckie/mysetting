@@ -1,0 +1,86 @@
+set nocompatible
+set rtp +=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'The-NERD-tree'
+Plugin 'tomasiser/vim-code-dark'
+Plugin 'vim-airline/vim-airline'
+Plugin 'Raimondi/delimitMate'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-scripts/OmniCppComplete'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'vim-scripts/Cpp11-Syntax-Support'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'vim-scripts/a.vim'
+Plugin 'chazy/cscope_maps'
+"Plugin 'vim-script/argtextobj.vim'
+Plugin 'wincent/Command-T'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'ddollar/nerdcommenter'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'majutsushi/tagbar'
+Plugin 'chrisbra/NrrwRgn'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'bfrg/vim-cpp-modern'
+Plugin 'jacoborus/tender.vim'
+Plugin 'sheerun/vim-polyglot'
+call vundle#end()
+filetype on
+syntax on
+"----------------------------------Color Scheme--------------------------------------"
+"colorscheme cpp
+"colorscheme codedark
+colorscheme onedark
+"colorscheme tender
+"----------------------------------Color Scheme--------------------------------------"
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set autoindent
+set smartindent
+set ruler
+set expandtab
+set showmatch
+"set termguicolors
+set number
+nnoremap <Leader>cc : set colorcolumn=80<cr>
+nnoremap <Leader>ncc : set colorcolumn-=80<cr>
+set mouse=a
+set t_Co=256
+set t_ut=
+"let g:codedark_conservative=1
+let g:codedark_modern=1
+"let g:codedark_italics=1
+"let g:codedark_transparent=1
+let g:airline_theme='codedark'
+let delimitMate_expand_cr=1
+let c_no_curly_error=1
+set enc=utf-8
+set guifont=Powerline_Consolas:h11
+set renderoptions=type:directx,gamma:1.5,contrast:0.5,geom:1,renmode:5,taamode:1,level:0.5
+let g:syntastic_enable_signs = 1
+let g:syntastic_cpp_checkers = ['gcc']
+let g:syntastic_auto_jump = 1
+let g:syntastic_enable_balloons = 1
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_option = '-std=c++11'
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_auto_refresh_includes = 1
+let g:syntastic_always_populate_loc_list = 1
+"tender
+"let g:lightline = {'colorscheme': 'tender'}
+"let g:airline_theme ='tender'
+"Class
+"syn match   cCustomParen    "?=(:"   contains=cParen,cCppParen
+"syn match   cCustomFunc     "\w\+\s*(\@="   contains=cCustomParen
+"hi CustomFunc guifg=NONE guibg=NONE guisp=NONE gui=bold ctermfg=lightyellow ctermbg=NONE cterm=bold
+"hi def link cCustomFunc CustomFunc
+"syn match cCustomClassName "\(^class\s\)\@<=\w\+"
+"hi def link cCustomClassName CustomFunc
+"let b:current_syntax='cpp'
